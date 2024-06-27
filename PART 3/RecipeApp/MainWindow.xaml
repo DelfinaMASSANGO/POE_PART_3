@@ -1,0 +1,34 @@
+﻿<Window x:Class="RecipeApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Recipe Creator" Height="600" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/initial background.jpeg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Delfina's Recipe Creator" FontSize="50" FontWeight="Bold" 
+                   Foreground="Black" HorizontalAlignment="Center" Margin="10" 
+                   Grid.ColumnSpan="2" />
+
+        <StackPanel Grid.Column="0" Grid.Row="1" Margin="27,12,0,8">
+            <Button Content="Create Recipe" Click="CreateRecipe_Click" Background="#FF030303" />
+            <Button Content="Scale Recipe" Click="ScaleRecipe_Click" Background="#FF030303" />
+            <Button Content="Reset Quantities" Click="ResetQuantities_Click" Background="#FF040404" />
+            <Button Content="Delete Recipe" Click="DeleteRecipe_Click" Background="#FF0E0E0E" />
+            <Button Content="Filter Recipes" Click="FilterRecipes_Click" Background="Black" />
+            <Button Content="Display Recipe" Click="DisplayRecipe_Click" Background="Black" />
+        </StackPanel>
+
+        <ListBox x:Name="RecipeListBox" Grid.Column="1" Grid.Row="1" Margin="139,12,84,91" 
+                 SelectionChanged="RecipeListBox_SelectionChanged" />
+    </Grid>
+</Window>
